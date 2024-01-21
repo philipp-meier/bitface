@@ -21,6 +21,13 @@ class BitFaceApp extends Application.AppBase {
         return [ new BitFaceView() ];
     }
 
+    function getSettingsView() {
+        return [new SettingsView(), new SettingsDelegate()];
+    }
+
+    function onSettingsChanged() {
+        WatchUi.requestUpdate();
+    }
 }
 
 function getApp() as BitFaceApp {
